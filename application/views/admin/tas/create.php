@@ -3,7 +3,7 @@
 <div class="container">
   <legend>Tambah Data Tas Export</legend>
   <div class="col-xs-12 col-sm-12 col-md-12">
-  <?php echo form_open('tas/store'); ?>
+  <?php echo form_open_multipart('tas/store'); ?>
 
     <div class="form-group">
       <label for="nama">Nama Barang</label>
@@ -21,7 +21,7 @@
 		<label for="foto">Foto</label>
 	  <input type="file" name="foto" size="20" value="<?php echo set_value('foto'); ?>">
 	</div>
-
+<?php echo $error ?>
     <a class="btn btn-info" href="<?php echo site_url('tas/') ?>">Kembali</a>
     <button type="submit" class="btn btn-primary">OK</button>
 

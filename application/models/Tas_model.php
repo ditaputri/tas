@@ -7,22 +7,21 @@ class Tas_model extends CI_Model {
     {
         // $query = $this->db->get('pegawai');
         
-        $query = $this->db->get('tas');
-        $query = $this->db->get();
+        $query = $this->db->get('barang');
 
         return $query->result();
     }
 
     public function insert($data = [])
     {
-        $result = $this->db->insert('tas', $data);
+        $result = $this->db->insert('barang', $data);
         return $result;
     }
 
     public function show($id_barang)
     {
         $this->db->where('id_barang', $id_barang);
-        $query = $this->db->get('tas');
+        $query = $this->db->get('barang');
         return $query->row();
     }
 
@@ -38,7 +37,7 @@ class Tas_model extends CI_Model {
           ];
 
         $this->db->where('id_barang', $id_barang);
-        $this->db->update('tas', $data);
+        $this->db->update('barang', $data);
         return result;
     }
     
@@ -47,7 +46,7 @@ class Tas_model extends CI_Model {
         // TODO: tambahkan logic penghapusan data
         $this->db->where('id_barang', $id_barang);
 
-        $this->db->delete('tas');
+        $this->db->delete('barang');
     }
 }
 

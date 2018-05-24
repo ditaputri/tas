@@ -6,14 +6,13 @@ class Tas extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Tas_model');
 
         // Konfigurasi Upload
         $config['upload_path']          = './assets/uploads/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 1500;
-        $config['max_width']            = 1536;
-        $config['max_height']           = 768;
+        $config['max_size']             = 2000;
+        $config['max_width']            = 1636;
+        $config['max_height']           = 868;
 
         $this->load->library('upload', $config);
     }
@@ -26,12 +25,15 @@ class Tas extends CI_Controller {
                     'title' => 'Olshop Export Bag :: Data Tas',
                     'tas' => $tas,
                 ];
-        $this->load->view('tas/index', $data);
+        $this->load->view('admin/tas/index', $data);
     }
 
     public function create($error='')
     {
-        $this->load->view('tas/create', $data);
+        $data = [
+            'error' => $error
+        ];
+        $this->load->view('admin/tas/create', $data);
     }
 
     public function show($id_barang)
@@ -40,7 +42,7 @@ class Tas extends CI_Controller {
         $data = [
             'data' => $tas
         ];
-        $this->load->view('tas/show', $data);
+        $this->load->view('admin/tas/show', $data);
     }
     
     public function store()
@@ -68,6 +70,8 @@ class Tas extends CI_Controller {
                 // Insert data
                 $data = [
                     'nama' => $nama,
+                    'harga' => $harga,
+                    'keterangan' => $keterangan,
                     'foto' => $this->upload->data('file_name')
                     ];
                 $result = $this->Tas_model->insert($data);
@@ -79,7 +83,7 @@ class Tas extends CI_Controller {
                 else
                 {
                     $error = array('error' => 'Gagal');
-                    $this->load->view('tas/create', $error);
+                    $this->load->view('admin/tas/create', $error);
                 }
             }
         }
@@ -93,13 +97,13 @@ class Tas extends CI_Controller {
     public function edit($id_barang,$error='')
     {
       // TODO: tampilkan view edit data
-        $tas = $this->Pegawai_model->show($id_barang);
+        $tas = $this->Tas_model->show($id_barang);
         //$jabatan = $this->Jabatan_model->list();
         $data = [
             'data' => $tas,
             'error' => $error
         ];
-        $this->load->view('tas/edit', $data);
+        $this->load->view('admin/tas/edit', $data);
       
     }
 
@@ -135,7 +139,7 @@ class Tas extends CI_Controller {
                 else
                 {
                     $data = array('error' => 'Gagal');
-                    $this->load->view('tas/edit', $data);
+                    $this->load->view('admin/tas/edit', $data);
                 }
             }
             else
@@ -154,7 +158,7 @@ class Tas extends CI_Controller {
                 else
                 {
                     $data = array('error' => 'Gagal');
-                    $this->load->view('tas/edit', $data);
+                    $this->load->view('admin/tas/edit', $data);
                 }
             }
         }
@@ -185,8 +189,18 @@ class Tas extends CI_Controller {
             [
                 'field' => 'nama',
                 'label' => 'Nama',
-                'rules' => 'trim|required|callback_alpha_space'
-            ]
+                'rules' => 'trim|required'
+            ],
+            [
+                'field' => 'harga',
+                'label' => 'Harga',
+                'rules' => 'trim|required'
+            ],
+            [
+                'field' => 'keterangan',
+                'label' => 'Keterangan',
+                'rules' => 'trim|required'
+            ],
           ];
 
         $this->form_validation->set_rules($rules);
@@ -196,11 +210,6 @@ class Tas extends CI_Controller {
         else
         { return false; }
     } 
-
-    public function alpha_space($str)
-    {
-        return ( ! preg_match("/^([a-z ])+$/i", $str)) ? FALSE : TRUE;
-    }
 }
 
 /* End of file Controllername.php */
