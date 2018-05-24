@@ -1,6 +1,6 @@
 <?php $this->load->view('admin/layout/base_start') ?>
 
-<h1>test</h1>
+<h1>test 123</h1>
 
 
 
