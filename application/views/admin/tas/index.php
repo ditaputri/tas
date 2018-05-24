@@ -53,6 +53,7 @@
         <?php } ?>
       </tbody>
     </table>
+    <?php echo $links ?>
   </div>
 </div>
 

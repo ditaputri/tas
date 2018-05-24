@@ -3,19 +3,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tas_model extends CI_Model {
 
-    public function list()
-    {
-        // $query = $this->db->get('pegawai');
-        
-        $query = $this->db->get('barang');
-
-        return $query->result();
+    public function list($limit, $start)
+    { 
+        $query = $this->db->get('barang', $limit, $start);
+        return ($query->num_rows() > 0) ? $query->result() : false;
     }
 
     public function insert($data = [])
     {
         $result = $this->db->insert('barang', $data);
         return $result;
+    }
+
+    public function getTotal()
+    {
+        return $this->db->count_all('barang');
     }
 
     public function show($id_barang)
