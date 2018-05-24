@@ -1,14 +1,13 @@
-<!-- pegawai/edit.php -->
 
-<?php $this->load->view('layouts/base_start') ?>
+<?php $this->load->view('admin/layout/base_start') ?>
 
 <div class="container">
   <legend>Edit Data Tas Export</legend>
   <div class="col-xs-12 col-sm-12 col-md-12">
 
-  <?php echo form_open('tas/update/'.$data->id); ?>
+  <?php echo form_open('tas/update/'.$data->id_barang); ?>
 
-    <?php echo form_hidden('id', $data->id) ?>
+    <?php echo form_hidden('id_barang', $data->id_barang) ?>
 
     <div class="form-group">
       <label for="nama">Nama Barang</label>
@@ -37,4 +36,4 @@
   </div>
 </div>
 
-<?php $this->load->view('layouts/base_end') ?>
+<?php $this->load->view('admin/layout/base_end') ?>

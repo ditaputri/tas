@@ -1,4 +1,4 @@
-<?php $this->load->view('layouts/base_start') ?>
+<?php $this->load->view('admin/layout/base_start') ?>
 
 <div class="container">
   <legend>Tambah Data Tas Export</legend>
@@ -14,7 +14,7 @@
       <input type="text" class="form-control" id="harga" name="harga" placeholder="Masukkan Harga Barang">
     </div>
     <div class="form-group">
-      <label for="keterangan">Keterangan</label>
+      <label for="keterangan">Keterangan Barang</label>
       <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Masukkan Keterangan Barang">
     </div>
     <div class="form-group">
@@ -29,4 +29,4 @@
   </div>
 </div>
 
-<?php $this->load->view('layouts/base_end') ?>
+<?php $this->load->view('admin/layout/base_end') ?>
