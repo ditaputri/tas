@@ -12,7 +12,11 @@ class Login extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('login');
         } else {
-            redirect("Tas");
+            if($this->session->userdata('logged_in')['level'] == 'admin'){
+                redirect("Tas");
+            }else{
+                redirect("Home");
+            }
         }
     }
     
