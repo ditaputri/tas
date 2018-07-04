@@ -18,5 +18,8 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo site_url('tas/') ?>">Tas</a>
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class=""><a href="<?php echo site_url('Login/logout') ?>">Logout</a>
+    </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

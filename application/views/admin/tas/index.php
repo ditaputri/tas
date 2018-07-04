@@ -1,6 +1,22 @@
 <?php $this->load->view('admin/layout/base_start') ?>
+
 <div class="container">
+
   <legend>Daftar Tas</legend>
+
+  <?php echo form_open("tas/index");?>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input class="form-control" id="nama_tas" name="nama_tas" placeholder="Masukkan Nama Barang..." type="text" value="<?php echo set_value('nama_tas'); ?>" />
+                </div>
+                <div class="col-md-6">
+                    <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+                    <a href="<?php echo site_url(). "tas/index"; ?>" class="btn btn-primary">Show All</a>
+                </div>
+            </div>
+        <?php echo form_close(); ?>
+        </div>
+
   <div class="col-xs-12 col-sm-12 col-md-12">
     <table class="table table-striped">
       <thead>
@@ -15,6 +31,7 @@
           </a>
         </th>
       </thead>
+      <?php if (isset($tas)) { ?>
       <tbody>
         <?php $number = 1; foreach($tas as $row) { ?>
         <tr>
@@ -39,7 +56,7 @@
             </a>
           </td>
           <td>
-              <img src="<?php echo base_url('assets/uploads/').$row->foto; ?>" style="display:block; width:100%; height:100%;">
+              <img src="<?php echo base_url('assets/uploads/').$row->foto; ?>" style="display:block; width:100%;">
           </td>
           <td>
             <?php echo form_open('tas/destroy/'.$row->id_barang); ?>
@@ -51,9 +68,14 @@
           </td>
         </tr>
         <?php } ?>
+
       </tbody>
     </table>
     <?php echo $links ?>
+    <?php }
+        else { ?>
+          <div>tidak ada data</div>
+        <?php } ?>
   </div>
 </div>
 

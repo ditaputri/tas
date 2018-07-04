@@ -16,21 +16,28 @@ class Tas extends CI_Controller {
         $config['max_height']           = 1000;
 
         $this->load->library('upload', $config);
+        if($this->session->userdata('logged_in') == null){
+            redirect('Login/logout');
+        }
     }
 
     public function index()
     {
+        //searching
+        $search = ($this->input->post("nama_tas"))? $this->input->post("nama_tas") : "NIL";
+
+        $search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
 
         $data = [];
-        $total = $this->Tas_model->getTotal();
+        $total = $this->Tas_model->getTotal($search);
         if ($total > 0) {
             $limit = 2;
-            $start = $this->uri->segment(3, 0);
+            $start = $this->uri->segment(4, 0);
             $config = [
-                'base_url' => site_url() . '/tas/index',
+                'base_url' => site_url() . '/tas/index/' . $search,
                 'total_rows' => $total,
                 'per_page' => $limit,
-                'uri_segment' => 3,
+                'uri_segment' => 4,
                 // Bootstrap 3 Pagination
                 'first_link' => '&laquo;',
                 'last_link' => '&raquo;',
@@ -54,7 +61,7 @@ class Tas extends CI_Controller {
             $this->pagination->initialize($config);
             $data = [
                 'title' => 'Olshop Export Bag :: Data Tas',
-                'tas' => $this->Tas_model->list($limit, $start),
+                'tas' => $this->Tas_model->list($limit, $start, $search),
                 'links' => $this->pagination->create_links(),
             ];
         }

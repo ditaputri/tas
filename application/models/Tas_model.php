@@ -3,8 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tas_model extends CI_Model {
 
-    public function list($limit, $start)
+    public function list($limit, $start, $search)
     { 
+        $query = $this->db->get('barang', $limit, $start);
+
+        if($search != 'NIL')
+        {
+            $this->db->like('nama',$search);
+        }
         $query = $this->db->get('barang', $limit, $start);
         return ($query->num_rows() > 0) ? $query->result() : false;
     }
@@ -15,8 +21,13 @@ class Tas_model extends CI_Model {
         return $result;
     }
 
-    public function getTotal()
+    public function getTotal($search)
     {
+        $query = $this->db->get('barang');
+        if($search != 'NIL')
+        {
+            $this->db->like('nama', $search);
+        }
         return $this->db->count_all('barang');
     }
 
