@@ -39,9 +39,23 @@
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
+						Register
 					</span>
 					<?php echo validation_errors(); ?>
+					<div class="wrap-input100 validate-input" data-validate = "Enter nama">
+						<input class="input100" type="text" name="nama" placeholder="nama">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Enter alamat">
+						<input class="input100" type="text" name="alamat" placeholder="alamat">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Enter no_hp">
+						<input class="input100" type="text" name="no_hp" placeholder="no_hp">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+
+
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
@@ -51,19 +65,12 @@
 						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
-
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Register
 						</button>
 					</div>
-
-					<div class="text-center p-t-90">
-						<a class="txt1" href="<?php echo site_url('Login/register') ?>#">
-							Register
-						</a>
-					</div>
-				</form>
+									</form>
 			</div>
 		</div>
 	</div>

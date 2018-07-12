@@ -16,7 +16,10 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo site_url('tas/') ?>">Tas</a>
+      <li <?php if($this->uri->segment(1) == 'tas') echo ' class="active"'; ?>><a href="<?php echo site_url('tas/') ?>">Tas</a>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li <?php if($this->uri->segment(1) == 'user') echo ' class="active"'; ?>><a href="<?php echo site_url('user/') ?>">User</a>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class=""><a href="<?php echo site_url('Login/logout') ?>">Logout</a>
