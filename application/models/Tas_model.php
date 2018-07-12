@@ -6,7 +6,6 @@ class Tas_model extends CI_Model {
     public function list($limit, $start, $search)
     { 
         $query = $this->db->get('barang', $limit, $start);
-
         if($search != 'NIL')
         {
             $this->db->like('nama',$search);
@@ -42,12 +41,6 @@ class Tas_model extends CI_Model {
     {
         // TODO: set data yang akan di update
         // https://www.codeigniter.com/userguide3/database/query_builder.html#updating-data
-
-        $data=[
-            'nama'=>$this->input->post('nama'),
-            'harga'=>$this->input->post('harga'),
-            'keterangan'=>$this->input->post('keterangan')
-          ];
 
         $this->db->where('id_barang', $id_barang);
         $this->db->update('barang', $data);

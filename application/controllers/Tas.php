@@ -73,7 +73,8 @@ class Tas extends CI_Controller {
     public function create($error='')
     {
         $data = [
-            'error' => $error
+            'error' => $error,
+            'kategori' => $this->db->get('kategori')->result()
         ];
         $this->load->view('admin/tas/create', $data);
     }
@@ -92,8 +93,9 @@ class Tas extends CI_Controller {
         // Ambil value 
         $nama = $this->input->post('nama');
         $harga = $this->input->post('harga');
+        $kategori = $this->input->post('kategori');
+        $stok = $this->input->post('stok');
         $keterangan = $this->input->post('keterangan');
-
         // Validasi Nama dan Jabatan
         $dataval = $nama;
         $errorval = $this->validate($dataval);
@@ -112,6 +114,8 @@ class Tas extends CI_Controller {
                 // Insert data
                 $data = [
                     'nama' => $nama,
+                    'kategori' => $kategori,
+                    'stok' => $stok,
                     'harga' => $harga,
                     'keterangan' => $keterangan,
                     'foto' => $this->upload->data('file_name')
@@ -125,6 +129,7 @@ class Tas extends CI_Controller {
                 else
                 {
                     $error = array('error' => 'Gagal');
+                    $error['kategori'] = $this->db->get('kategori')->result();
                     $this->load->view('admin/tas/create', $error);
                 }
             }
@@ -143,6 +148,7 @@ class Tas extends CI_Controller {
         //$jabatan = $this->Jabatan_model->list();
         $data = [
             'data' => $tas,
+            'kategori' => $this->db->get('kategori')->result(),
             'error' => $error
         ];
         $this->load->view('admin/tas/edit', $data);
@@ -154,6 +160,8 @@ class Tas extends CI_Controller {
         //Ambil Value
         $id_barang=$this->input->post('id_barang');
         $nama = $this->input->post('nama');
+        $kategori = $this->input->post('kategori');
+        $stok = $this->input->post('stok');
         $harga = $this->input->post('harga');
         $keterangan = $this->input->post('keterangan');
 
@@ -169,8 +177,11 @@ class Tas extends CI_Controller {
             if ( ! $this->upload->do_upload('foto'))
             {
                 $data = [
-                    'nama' => $nama
-                    //'kode' => $jabatan
+                    'nama' => $nama,
+                    'kategori' => $kategori,
+                    'stok' => $stok,
+                    'harga' => $harga,
+                    'keterangan' => $keterangan,
                     ];
                 $result = $this->Tas_model->update($id_barang,$data);
 
@@ -181,6 +192,7 @@ class Tas extends CI_Controller {
                 else
                 {
                     $data = array('error' => 'Gagal');
+                    $data['kategori'] = $this->db->get('kategori')->result();
                     $this->load->view('admin/tas/edit', $data);
                 }
             }
@@ -188,7 +200,10 @@ class Tas extends CI_Controller {
             {
                 $data = [
                     'nama' => $nama,
-                    //'kode' => $jabatan,
+                    'kategori' => $kategori,
+                    'stok' => $stok,
+                    'harga' => $harga,
+                    'keterangan' => $keterangan,
                     'foto' => $this->upload->data('file_name')
                     ];
                 $result = $this->Tas_model->update($id_barang,$data);
@@ -200,6 +215,7 @@ class Tas extends CI_Controller {
                 else
                 {
                     $data = array('error' => 'Gagal');
+                    $data['kategori'] = $this->db->get('kategori')->result();
                     $this->load->view('admin/tas/edit', $data);
                 }
             }

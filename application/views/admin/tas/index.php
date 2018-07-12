@@ -22,6 +22,8 @@
       <thead>
         <th>No</th>
         <th>Nama Barang</th>
+        <th>Kategori</th>
+        <th>Stok</th>
         <th>Harga Barang</th>
         <th>Keterangan</th>
         <th width="200">Foto</th>
@@ -43,6 +45,16 @@
           <td>
             <a href="<?php echo site_url('tas/show/'.$row->id_barang) ?>">
               <?php echo $row->nama ?>
+            </a>
+          </td>
+          <td>
+            <a href="<?php echo site_url('tas/show/'.$row->id_barang) ?>">
+              <?php echo $row->kategori ?>
+            </a>
+          </td>
+          <td>
+            <a href="<?php echo site_url('tas/show/'.$row->id_barang) ?>">
+              <?php echo $row->stok ?>
             </a>
           </td>
           <td>

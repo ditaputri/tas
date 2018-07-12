@@ -21,6 +21,9 @@
     <ul class="nav navbar-nav">
       <li <?php if($this->uri->segment(1) == 'user') echo ' class="active"'; ?>><a href="<?php echo site_url('user/') ?>">User</a>
     </ul>
+    <ul class="nav navbar-nav">
+      <li <?php if($this->uri->segment(1) == 'kategori') echo ' class="active"'; ?>><a href="<?php echo site_url('kategori/') ?>">Kategori</a>
+    </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class=""><a href="<?php echo site_url('Login/logout') ?>">Logout</a>
     </ul>
