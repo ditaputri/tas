@@ -14,6 +14,13 @@ class Tas_model extends CI_Model {
         return ($query->num_rows() > 0) ? $query->result() : false;
     }
 
+    public function product($id)
+    {
+        $this->db->select('barang.*,kategori.nama_kategori');
+        $this->db->join('kategori','barang.kategori=kategori.id');
+        $this->db->where('id_barang',$id);
+        return $this->db->get('barang')->result()[0];
+    }
     public function insert($data = [])
     {
         $result = $this->db->insert('barang', $data);
