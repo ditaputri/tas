@@ -14,6 +14,15 @@ class Tas_model extends CI_Model {
         return ($query->num_rows() > 0) ? $query->result() : false;
     }
 
+    public function search($word)
+    {
+        $this->db->select('barang.*,kategori.nama_kategori');
+        $this->db->join('kategori','barang.kategori=kategori.id');
+        $this->db->like('barang.nama',$word);
+        $this->db->or_like('kategori.nama_kategori',$word);
+        return $this->db->get('barang')->result();
+    }
+
     public function product($id)
     {
         $this->db->select('barang.*,kategori.nama_kategori');

@@ -5,7 +5,12 @@ class Home extends CI_Controller {
 
 	public function index()
     {
+        $this->load->model('Tas_model');
         $data['barang'] = $this->db->get('barang')->result();
+        $search = $this->input->post('search');
+        if($search != null){
+            $data['barang'] = $this->Tas_model->search($search);
+        }
         $this->load->view('user/home',$data);
     }
     public function product($id)
