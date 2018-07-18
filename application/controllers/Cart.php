@@ -26,6 +26,31 @@ class Cart extends CI_Controller {
     }
     public function checkout()
     {
-        $this->load->view('user/checkout');
+        if((count($this->cart->contents()) == 0) || $this->session->userdata('logged_in') == null){
+            redirect('Home');
+        }
+        $data['user'] = $this->db->where('id_user',$this->session->userdata('logged_in')['id_user'])->get('user')->result()[0];
+        $this->load->view('user/checkout',$data);
+    }
+    public function bayar($value='')
+    {
+        $set = array(
+            'tanggal' => date("Y-m-d"),
+            'pembayaran' => $this->input->post('payment'),
+            'id_user' => $this->session->userdata('logged_in')['id_user'],
+            'status' => 1 
+        );
+        $this->db->insert('transaksi',$set);
+        $id_transaksi = $this->db->insert_id();
+        foreach ($this->cart->contents() as $key => $value) {
+            $set_detail = array(
+                'id_transaksi' => $id_transaksi,
+                'id_barang' => $value['id'],
+                'jumlah' => $value['qty']
+            );
+            $this->db->insert('transaksi_detail',$set_detail);
+        }
+        $this->cart->destroy();
+        redirect("Home/complete/".$id_transaksi);
     }
 }
