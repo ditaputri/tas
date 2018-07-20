@@ -19,7 +19,7 @@
   }
 </style></head>
 <body>
-<h2><center>Biodata Mahasiswa</center></h2>
+<h2><center>Data Transaksi</center></h2>
 <table>
 <thead>
 <tr>

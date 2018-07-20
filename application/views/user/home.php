@@ -14,13 +14,9 @@
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">New Products</h3>
+							<h3 class="title">Products</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
 								</ul>
 							</div>
 						</div>
@@ -38,11 +34,11 @@
                                         <?php foreach($barang as $key => $value): ?>
                                         <div class="product">
 											<div class="product-img">
-												<img src="<?php echo base_url('assets/uploads/'.$value->foto)?>" alt="">
+												<img src="<?php echo base_url('assets/uploads/'.$value->foto)?>" alt=""height=270 width=100>
 												
 											</div>
 											<div class="product-body">
-												<p class="product-category">Category</p>
+												<p class="product-category"><?php echo $value->kategori?></p>
 												<h3 class="product-name"><a href="#"><?php echo $value->nama?></a></h3>
 												<h4 class="product-price">Rp. <?php echo $value->harga?></h4>
 											</div>
