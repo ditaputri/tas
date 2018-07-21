@@ -11,9 +11,9 @@
 								<h3 class="footer-title">About Us</h3>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+									<li><a href="#"><i class="fa fa-map-marker"></i>Jl. Soekarno Hatta Kav 4 No. B 3b</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>0813-2347-2765</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>ditput@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -22,11 +22,8 @@
 							<div class="footer">
 								<h3 class="footer-title">Categories</h3>
 								<ul class="footer-links">
-									<li><a href="#">Hot deals</a></li>
-									<li><a href="#">Laptops</a></li>
-									<li><a href="#">Smartphones</a></li>
-									<li><a href="#">Cameras</a></li>
-									<li><a href="#">Accessories</a></li>
+									<li><a href="#">Male</a></li>
+									<li><a href="#">Femule</a></li>
 								</ul>
 							</div>
 						</div>
