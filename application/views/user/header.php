@@ -159,8 +159,10 @@
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Store</a></li>
-						<li><a href="#">Laptops</a></li>
+						<?php foreach ($this->db->get('kategori')->result() as $key => $value): ?>
+							<li><a href="<?php echo site_url('Home/kategori/'.$value->nama_kategori) ?>"><?php echo $value->nama_kategori ?></a></li>
+						<?php endforeach ?>
+						
 					</ul>
 					<!-- /NAV -->
 				</div>

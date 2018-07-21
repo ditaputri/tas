@@ -19,4 +19,11 @@ class Home extends CI_Controller {
     	$data['barang'] = $this->Tas_model->product($id);
         $this->load->view('user/product',$data);
     }
+    public function kategori($nama)
+    {
+        $this->load->model('Tas_model');
+        $id_kategori = $this->db->where('nama_kategori',$nama)->get('kategori')->row(0)->id;
+        $data['barang'] = $this->db->where('kategori',$id_kategori)->get('barang')->result();
+        $this->load->view('user/home',$data);
+    }
 }

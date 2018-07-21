@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-md-6">
                     <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-                    <a href="<?php echo site_url(). "tas/index"; ?>" class="btn btn-primary">Show All</a>
+                    <a href="<?php echo site_url("tas/index"); ?>" class="btn btn-primary">Show All</a>
                 </div>
             </div>
         <?php echo form_close(); ?>
@@ -33,7 +33,7 @@
           </a>
         </th>
       </thead>
-      <?php if (isset($tas)) { ?>
+      <?php if ($tas) { ?>
       <tbody>
         <?php $number = 1; foreach($tas as $row) { ?>
         <tr>
