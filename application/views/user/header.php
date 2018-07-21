@@ -77,10 +77,6 @@
 						<div class="col-md-6">
 							<div class="header-search">
 								<form method="post">
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
 									</select>
 									<input class="input" placeholder="Search here" type="text" name="search">
 									<button type="submit" class="search-btn">Search</button>
@@ -158,7 +154,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="<?php echo site_url('Home'); ?>">Home</a></li>
 						<?php foreach ($this->db->get('kategori')->result() as $key => $value): ?>
 							<li><a href="<?php echo site_url('Home/kategori/'.$value->nama_kategori) ?>"><?php echo $value->nama_kategori ?></a></li>
 						<?php endforeach ?>
