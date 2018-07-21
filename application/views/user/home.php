@@ -15,11 +15,16 @@
 					<div class="col-md-12">
 						<div class="section-title">
 							<h3 class="title">Products</h3>
+<<<<<<< HEAD
 							<h4>Search key = <?php echo $this->input->post('search') ?></h4>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
 									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+=======
+							<div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+>>>>>>> 2f4a34bec08e6037f9d96c196d929373c585cee4
 								</ul>
 							</div>
 						</div>
@@ -37,11 +42,11 @@
                                         <?php foreach($barang as $key => $value): ?>
                                         <div class="product">
 											<div class="product-img">
-												<img src="<?php echo base_url('assets/uploads/'.$value->foto)?>" alt="">
+												<img src="<?php echo base_url('assets/uploads/'.$value->foto)?>" alt=""height=270 width=100>
 												
 											</div>
 											<div class="product-body">
-												<p class="product-category">Category</p>
+												<p class="product-category"><?php echo $value->kategori?></p>
 												<h3 class="product-name"><a href="#"><?php echo $value->nama?></a></h3>
 												<h4 class="product-price">Rp. <?php echo $value->harga?></h4>
 											</div>
