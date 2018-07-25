@@ -1,8 +1,10 @@
 <?php $this->load->view('admin/layout/base_start') ?>
 
-<div class="container">
 
-  <legend>Daftar Tas</legend>
+
+
+  <div class="row">
+    <legend>Daftar Tas</legend>
 
   <?php echo form_open("tas/index");?>
             <div class="form-group">
@@ -16,6 +18,7 @@
             </div>
         <?php echo form_close(); ?>
         </div>
+
 
   <div class="col-xs-12 col-sm-12 col-md-12">
     <table class="table table-striped">
@@ -89,6 +92,6 @@
           <div>tidak ada data</div>
         <?php } ?>
   </div>
-</div>
+  </div>
 
 <?php $this->load->view('admin/layout/base_end') ?>

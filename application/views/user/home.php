@@ -8,6 +8,7 @@
 		<div class="section">
 			<!-- container -->
 			<div class="container">
+			<?php if (isset($barang)) { ?>
 				<!-- row -->
 				<div class="row">
 
@@ -43,7 +44,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category"><?php echo $value->kategori?></p>
-												<h3 class="product-name"><a href="#"><?php echo $value->nama?></a></h3>
+												<h3 class="product-name"><?php echo $value->nama?></a></h3>
 												<h4 class="product-price">Rp. <?php echo $value->harga?></h4>
 									</div>
 									<div class="add-to-cart">
@@ -67,7 +68,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category"><?php echo $value->kategori?></p>
-												<h3 class="product-name"><a href="#"><?php echo $value->nama?></a></h3>
+												<h3 class="product-name"><?php echo $value->nama?></a></h3>
 												<h4 class="product-price">Rp. <?php echo $value->harga?></h4>
 											</div>
 											<div class="add-to-cart">
@@ -91,7 +92,10 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-
+<?php echo $links ?>
+<?php } else { ?>
+  <div>Tidak ada data</div>
+  <?php } ?>
 		
 
 		

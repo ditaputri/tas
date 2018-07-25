@@ -1,6 +1,6 @@
 <?php $this->load->view('admin/layout/base_start') ?>
 
-<div class="container">
+<div class="container-fluid">
   <legend>Tambah Data Tas Export</legend>
   <div class="col-xs-12 col-sm-12 col-md-12">
   <?php echo form_open_multipart('tas/store'); ?>

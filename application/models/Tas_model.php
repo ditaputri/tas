@@ -14,6 +14,16 @@ class Tas_model extends CI_Model {
         return ($query->num_rows() > 0) ? $query->result() : false;
     }
 
+    public function list1($limit,$start,$word)
+    {
+        $this->db->select('barang.*,kategori.nama_kategori');
+        $this->db->join('kategori','barang.kategori=kategori.id');
+        $this->db->like('barang.nama',$word);
+        $this->db->or_like('kategori.nama_kategori',$word);
+      $query = $this->db->get('barang', $limit, $start);
+      return ($query->num_rows() > 0) ? $query->result() : false;   
+    }
+
     public function search($word)
     {
         $this->db->select('barang.*,kategori.nama_kategori');
@@ -34,6 +44,11 @@ class Tas_model extends CI_Model {
     {
         $result = $this->db->insert('barang', $data);
         return $result;
+    }
+
+    public function getTotal1()
+    {
+        return $this->db->count_all('barang');
     }
 
     public function getTotal($search)

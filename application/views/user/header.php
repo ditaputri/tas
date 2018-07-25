@@ -67,7 +67,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="<?php echo base_url('assets_home/')?>img/logo.png" alt="">
+									<img src="<?php echo base_url('assets_home/')?>img/img4.png" alt="" style="max-height:70px;min-height:70px;">
 								</a>
 							</div>
 						</div>

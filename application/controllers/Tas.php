@@ -96,11 +96,11 @@ class Tas extends CI_Controller {
         $kategori = $this->input->post('kategori');
         $stok = $this->input->post('stok');
         $keterangan = $this->input->post('keterangan');
-        // Validasi Nama dan Jabatan
+        
         $dataval = $nama;
         $errorval = $this->validate($dataval);
 
-        // Pesan Error atau Upload
+        
         if ($errorval==false)
         {
             // Percobaan Upload
@@ -165,10 +165,10 @@ class Tas extends CI_Controller {
         $harga = $this->input->post('harga');
         $keterangan = $this->input->post('keterangan');
 
-        // Validasi Nama dan Jabatan
+
         $dataval = [
             'nama' => $nama
-            //'jabatan' => $jabatan
+            
             ];
         $errorval = $this->validate($dataval);
 
