@@ -17,7 +17,7 @@ class Home extends CI_Controller {
         $search = $this->input->post('search');
         $total = $this->Tas_model->getTotal1();
         if ($total > 0) {
-            $limit = 9;
+            $limit = 6;
             $start = $this->uri->segment(3, 0);
             $config = [
                 'base_url' => base_url() . 'index.php/home/index',
@@ -29,7 +29,7 @@ class Home extends CI_Controller {
                 'last_link' => '&raquo;',
                 'next_link' => 'Next',
                 'prev_link' => 'Prev',
-                'full_tag_open' => '<ul class="pagination">',
+                'full_tag_open' => '<ul class="pagination" style="margin-top:5rem;margin-left:45%">',
                 'full_tag_close' => '</ul>',
                 'num_tag_open' => '<li>',
                 'num_tag_close' => '</li>',
@@ -65,6 +65,15 @@ class Home extends CI_Controller {
         $this->load->model('Tas_model');
         $id_kategori = $this->db->where('nama_kategori',$nama)->get('kategori')->row(0)->id;
         $data['barang'] = $this->db->where('kategori',$id_kategori)->get('barang')->result();
-        $this->load->view('user/home',$data);
+        $this->load->view('user/kategori',$data);
+    }
+     public function complete($id)
+    {
+        $this->load->model('Transaksi_model');
+        $data['transaksi'] = $this->Transaksi_model->get_transaksi($id);
+
+
+        $data['detail'] = $this->Transaksi_model->get_detail($id);
+        $this->load->view('user/complete',$data);
     }
 }

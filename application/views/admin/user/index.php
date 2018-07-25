@@ -1,5 +1,9 @@
 <?php $this->load->view('admin/layout/base_start') ?>
-
+<?php echo form_open("user/search")?>
+  <input class="form-control" type="text" name="search" value="" placeholder="Masukkan Nama User. . .">
+  <input type="submit" class="btn btn-primary" value="search">
+  <a href="<?php echo site_url("user/index"); ?>" class="btn btn-primary">Show All</a>
+<?php ?>
 
   <div class="col-xs-12 col-sm-12 col-md-12">
     <table class="table table-striped">

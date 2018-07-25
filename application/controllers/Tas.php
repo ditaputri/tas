@@ -16,8 +16,8 @@ class Tas extends CI_Controller {
         $config['max_height']           = 1000;
 
         $this->load->library('upload', $config);
-        if($this->session->userdata('logged_in') == null){
-            redirect('Login/logout');
+        if($this->session->userdata('logged_in')['level'] != "admin"){
+            redirect("Login");
         }
     }
 
@@ -43,7 +43,7 @@ class Tas extends CI_Controller {
                 'last_link' => '&raquo;',
                 'next_link' => 'Next',
                 'prev_link' => 'Prev',
-                'full_tag_open' => '<ul class="pagination">',
+                'full_tag_open' => '<ul class="pagination" style="margin-top:5rem;margin-left:45%">',
                 'full_tag_close' => '</ul>',
                 'num_tag_open' => '<li>',
                 'num_tag_close' => '</li>',

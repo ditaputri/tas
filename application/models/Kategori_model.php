@@ -27,6 +27,13 @@ class Kategori_model extends CI_Model {
         $this->db->where('id',$id);
         $this->db->delete('kategori');
     }
+    public function search($search)
+    {
+        $this->db->select('*');
+        $this->db->like('nama_kategori',$search);
+        $query = $this->db->get("kategori");
+        return $query->result();    
+    }
 }
 
 /* End of file ModelName.php */

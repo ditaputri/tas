@@ -8,12 +8,10 @@
 					<div class="row">
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">About Us</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+								<h3 class="footer-title">YStrike Shop</h3>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>Jl. Soekarno Hatta Kav 4 No. B 3b</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>0813-2347-2765</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>ditput@gmail.com</a></li>
+									<li><i class="fa fa-map-marker"></i>Jl. Soekarno Hatta Kav 4 No. B 3b <br> Jatimulyo, Lowokwaru, East Java 65142</a></li>
+									
 								</ul>
 							</div>
 						</div>
@@ -25,17 +23,19 @@
 							<div class="footer">
 								<h3 class="footer-title">Information</h3>
 								<ul class="footer-links">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Contact Us</a></li>
+									<li><i class="fa fa-phone"></i>0813-2347-2765</a></li>
+									<li><i class="fa fa-phone"></i>021-391-7579</a></li>
+									
 								</ul>
 							</div>
 						</div>
 
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">Service</h3>
+								<h3 class="footer-title">Email</h3>
 								<ul class="footer-links">
-									<li><a href="#">Help</a></li>
+									<li><i class="fa fa-envelope-o"></i>ditanovia40@gmail.com</a></li>
+									<li><i class="fa fa-envelope-o"></i>putri.pi1188@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>

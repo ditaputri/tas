@@ -1,5 +1,10 @@
 <?php $this->load->view('admin/layout/base_start') ?>
 
+<?php echo form_open("kategori/search")?>
+  <input class="form-control" type="text" name="search" value="" placeholder="Masukkan Nama Kategori. . .">
+  <input type="submit" class="btn btn-primary" value="search">
+  <a href="<?php echo site_url("kategori/index"); ?>" class="btn btn-primary">Show All</a>
+<?php ?>
 
   <div class="col-xs-12 col-sm-12 col-md-12">
     <table class="table table-striped">
@@ -12,7 +17,6 @@
           </a>
         </th>
       </thead>
-      <?php if (isset($kategori)) { ?>
       <tbody>
         <?php $number = 1; foreach($kategori as $row) { ?>
         <tr>
@@ -31,11 +35,7 @@
 
       </tbody>
     </table>    
-    <?php }
-        else { ?>
-          <div>tidak ada data</div>
-        <?php } ?>
-  </div>
+
 </div>
 
 <?php $this->load->view('admin/layout/base_end') ?>

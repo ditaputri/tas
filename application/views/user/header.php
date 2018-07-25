@@ -41,11 +41,7 @@
 			<!-- TOP HEADER -->
 			<div id="top-header">
 				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> 0813-2347-2765</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> ditput@gmail.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> Jl. Soekarno Hatta Kav 4 No. B 3b, Jatimulyo, Lowokwaru, East Java 65142</a></li>
-					</ul>
+					
 					<ul class="header-links pull-right">
 						<?php if ($this->session->userdata('logged_in') != null): ?>
 							<li><a href="<?php echo base_url('index.php/login/logout') ?>"><i class="fa fa-user-o"></i> Logout</a></li>
@@ -119,7 +115,7 @@
 											<h5>SUBTOTAL: <?php echo $this->cart->format_number($this->cart->total()) ?></h5>
 										</div>
 										<div class="cart-btns">
-											<a href="#">View Cart</a>
+											<a href="">Continue</a>
 											<a href="<?php echo base_url('index.php/Cart/checkout') ?>">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
@@ -154,11 +150,10 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="<?php echo site_url('Home'); ?>">Home</a></li>
+						<li class=""><a href="<?php echo site_url('Home'); ?>">Home</a></li>
 						<?php foreach ($this->db->get('kategori')->result() as $key => $value): ?>
 							<li><a href="<?php echo site_url('Home/kategori/'.$value->nama_kategori) ?>"><?php echo $value->nama_kategori ?></a></li>
 						<?php endforeach ?>
-						
 					</ul>
 					<!-- /NAV -->
 				</div>

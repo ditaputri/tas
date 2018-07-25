@@ -29,6 +29,13 @@ class User_model extends CI_Model {
         $this->db->where('id_user',$id);
         $this->db->delete('user');
     }
+    public function search($search)
+    {
+        $this->db->select('*');
+        $this->db->like('nama',$search);
+        $query = $this->db->get("user");
+        return $query->result();    
+    }
 }
 
 /* End of file ModelName.php */

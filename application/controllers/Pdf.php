@@ -6,6 +6,9 @@ class Pdf extends Dompdf
     public function __construct()
     {
         parent::__construc();
+        if($this->session->userdata('logged_in')['level'] != "admin"){
+            redirect("Login");
+        }
     }
 
     protected function ci()

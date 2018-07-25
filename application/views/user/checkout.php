@@ -29,99 +29,30 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-
+<?php echo form_open("Cart/bayar") ?>
 					<div class="col-md-7">
 						<!-- Billing Details -->
 						<div class="billing-details">
 							<div class="section-title">
 								<h3 class="title">Billing address</h3>
 							</div>
+							
+							
 							<div class="form-group">
-								<input class="input" type="text" name="first-name" placeholder="First Name">
+							<label>Nama</label>
+								<input class="input" type="text" value="<?php echo $user->nama ?>" readonly>
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="last-name" placeholder="Last Name">
+								<label>alamat</label>
+								<input class="input" type="text" value="<?php echo $user->alamat ?>" readonly>
 							</div>
 							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
+								<label>no_hp</label>
+								<input class="input" type="text" value="<?php echo $user->no_hp ?>" readonly>
 							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="country" placeholder="Country">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
-							</div>
-							<div class="form-group">
-								<div class="input-checkbox">
-									<input type="checkbox" id="create-account">
-									<label for="create-account">
-										<span></span>
-										Create Account?
-									</label>
-									<div class="caption">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-										<input class="input" type="password" name="password" placeholder="Enter Your Password">
-									</div>
-								</div>
-							</div>
+							
 						</div>
-						<!-- /Billing Details -->
-
-						<!-- Shiping Details -->
-						<div class="shiping-details">
-							<div class="section-title">
-								<h3 class="title">Shiping address</h3>
-							</div>
-							<div class="input-checkbox">
-								<input type="checkbox" id="shiping-address">
-								<label for="shiping-address">
-									<span></span>
-									Ship to a diffrent address?
-								</label>
-								<div class="caption">
-									<div class="form-group">
-										<input class="input" type="text" name="first-name" placeholder="First Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="last-name" placeholder="Last Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="email" name="email" placeholder="Email">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="address" placeholder="Address">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="city" placeholder="City">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="country" placeholder="Country">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-									</div>
-									<div class="form-group">
-										<input class="input" type="tel" name="tel" placeholder="Telephone">
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /Shiping Details -->
-
-						<!-- Order notes -->
-						<div class="order-notes">
-							<textarea class="input" placeholder="Order Notes"></textarea>
-						</div>
-						<!-- /Order notes -->
+						
 					</div>
 
 					<!-- Order Details -->
@@ -153,44 +84,50 @@
 						</div>
 						<div class="payment-method">
 							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-1">
+								<input type="radio" name="payment" id="payment-1" value="BCA" checked>
 								<label for="payment-1">
 									<span></span>
-									Direct Bank Transfer
+									BCA
 								</label>
 								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									
+									<p>Nomor Rekening : 1213123123123213 <br>	
+									Atas Nama : Dita Novia</p>
 								</div>
 							</div>
 							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2">
+								<input type="radio" name="payment" id="payment-2" value="BRI">
 								<label for="payment-2">
 									<span></span>
-									Cheque Payment
+									BRI
 								</label>
 								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									
+									<p>Nomor Rekening : 1213123123123213 <br>	
+									Atas Nama : Putri Indah</p>
 								</div>
 							</div>
 							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-3">
+								<input type="radio" name="payment" id="payment-3" value="BNI">
 								<label for="payment-3">
 									<span></span>
-									Paypal System
+									BNI
 								</label>
 								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									
+									<p>Nomor Rekening : 1213123123123213 <br>	
+									Atas Nama : Dita Novia</p>
 								</div>
 							</div>
 						</div>
-						<div class="input-checkbox">
+						<!--<div class="input-checkbox">
 							<input type="checkbox" id="terms">
 							<label for="terms">
 								<span></span>
 								I've read and accept the <a href="#">terms & conditions</a>
 							</label>
-						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
+						</div>-->
+						<button type="submit" class="primary-btn order-submit">Continue</button>
 					</div>
 					<!-- /Order Details -->
 				</div>

@@ -52,14 +52,8 @@
 						<div class="product-details">
 							<h2 class="product-name"><?php echo $barang->nama ?></h2>
 							<div>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o"></i>
-								</div>
-								<a class="review-link" href="#">10 Review(s) | Add your review</a>
+								
+								
 							</div>
 							<div>
 								<h3 class="product-price">Rp. <?php echo $barang->harga ?></h3>
@@ -93,9 +87,7 @@
 						<div id="product-tab">
 							<!-- product tab nav -->
 							<ul class="tab-nav">
-								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab2">Details</a></li>
-								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+								<li class="active"><a data-toggle="tab" href="#tab1">Details</a></li>
 							</ul>
 							<!-- /product tab nav -->
 

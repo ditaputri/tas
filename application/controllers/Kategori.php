@@ -7,12 +7,30 @@ class Kategori extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Kategori_model');
+        if($this->session->userdata('logged_in')['level'] != "admin"){
+            redirect("Login");
+        }
     }
 	public function index()
 	{
+
 		$data['kategori'] = $this->Kategori_model->select();
 		$this->load->view('admin/kategori/index',$data);
 	}
+
+    public function search()
+    {
+        if($this->input->post('search') != null){
+            $this->load->model('Kategori_model');
+            $search = $this->Kategori_model->search($this->input->post('search'));
+            $data = [
+                'kategori' => $search,
+            ];
+            $this->load->view('admin/kategori/index', $data);
+        }else{
+            echo"data tidak ditemukan";
+        }
+    }
 
 	public function create()
 	{
